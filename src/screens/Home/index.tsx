@@ -7,7 +7,11 @@ import { styles } from "./styles";
 export function Home() {
 
   function handleAddParticipant() {
-    console.log("Testando");
+    console.log("Participante Adicionado!");
+  }
+
+  function handleRemoveParticipant() {
+    console.log("Participante Removido!");
   }
 
   return (
@@ -37,9 +41,9 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant name="Guilherme"/>
-      <Participant name="Camila"/>
-      <Participant name="Zé da Manga"/>
+      <Participant name="Guilherme" onRemove={handleRemoveParticipant}/>
+      <Participant name="Camila" onRemove={handleRemoveParticipant}/>
+      <Participant name="Zé da Manga" onRemove={handleRemoveParticipant}/>
     </View>
   );
 }
