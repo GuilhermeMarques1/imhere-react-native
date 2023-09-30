@@ -1,4 +1,4 @@
-import { Text, View, TextInput, TouchableOpacity, FlatList } from "react-native";
+import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from "react-native";
 
 import { Participant } from "../../components/Participant";
 
@@ -12,6 +12,18 @@ export function Home() {
   }
 
   function handleRemoveParticipant(name: string) {
+    // Alert.alert("Remover", `Remover o participante ${name}?`
+    Alert.alert("Remover", `Tem certeza que deseja remover o participante ${name}?`, [
+      {
+        text: "Sim",
+        onPress: () => Alert.alert("Deletado!")
+      },
+      {
+        text: "Não",
+        style: "cancel"
+      }
+    ]);
+
     console.log(`Participante ${name} foi Removido!`);
   }
 
